@@ -3,6 +3,7 @@ import compression from 'compression';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
+import logger from './logger';
 
 // Config env vars
 dotenv.config();
@@ -35,4 +36,10 @@ app.use(morgan('dev', {
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.listen(port, () => console.log(`Server listening on port ${port}...`));
+// Handle errors
+app.use((err, req, res, next) => {
+  logger.error(`ERR: ${err}`);
+  res.status(500).send('Something broke!');
+});
+
+app.listen(port, () => logger.info(`Server listening on port ${port}...`));
