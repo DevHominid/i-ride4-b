@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import logger from './logger';
 import keystone from 'keystone';
+import { apiRouter } from './routes';
 
 // Config env vars
 dotenv.config();
@@ -82,7 +83,7 @@ app.use(morgan('dev', {
 app.use(express.static(`${__dirname}/../public`));
 
 // Mount routing middleware
-router.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 // Handle errors
 app.use((err, req, res, next) => {
