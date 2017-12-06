@@ -15,30 +15,46 @@ const port = process.env.PORT || 8080;
 
 // Init keystone
 keystone.init({
+  // Project options
   'name': 'i-Ride4',
-  'favicon': '../public/favicons/favicon.ico',
-  'static': ['public'],
+  'brand': 'i-Ride4',
   'auto update': true,
-  'cors allow origin': true,
-  'cors allow methods': 'GET,OPTIONS,POST',
-  'session': true,
+
+  // Web server options
+  'port': port,
+  'static': ['public'],
+  'favicon': '../public/favicons/favicon.ico',
+
+  // Database and user auth
+  'mongo': process.env.MONGO_URI || 'mongodb://localhost/i-ride4',
+  'cookie secret': process.env.KEYSTONE_COOKIE_SECRET || 'temporarycookiesecret',
   'auth': true,
   'user model': 'User',
-  'cookie secret': 'testkeystonecookiesecret',
-  'trust proxy': true
+
+  // Services
+  'cloudinary config': process.env.CLOUDINARY_CONFIG || {
+    cloud_name: 'sample-cloud',
+    api_key: 'samplekey',
+    api_secret: 'samplesecret'
+  },
+
+  'session': true,
 });
 
-if (process.env.MONGODB) {
-  keystone.set('mongo', process.env.MONGODB);
+if (process.env.NODE_ENV === 'production') {
+  keystone.set('cloudinary secure', true);
 }
 
-if (process.env.HOST) {
-  keystone.set('host', process.env.HOST);
-}
+// Import models
+keystone.import('./models');
 
-if (process.env.PORT) {
-  keystone.set('port', process.env.PORT)
-}
+// Set nav object
+keystone.set('nav', {
+  'users': ['User']
+});
+
+// Set express instance
+keystone.set('app', app);
 
 // Use Gzip compression
 app.use(compression());
@@ -68,16 +84,6 @@ app.use(express.static(`${__dirname}/../public`));
 // Mount routing middleware
 router.use('/api', apiRouter);
 
-// Import models
-keystone.import('./models');
-
-// Set keystone nav
-keystone.set('nav', {
-  'users': ['User']
-});
-
-keystone.set('app', app);
-
 // Handle errors
 app.use((err, req, res, next) => {
   logger.error(`Error: \nMessage: ${err.message}`);
@@ -86,4 +92,4 @@ app.use((err, req, res, next) => {
 
 // app.listen(port, () => logger.info(`Server listening on port ${port}...`));
 
-export default keystone;
+keystone.start();
