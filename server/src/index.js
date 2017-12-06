@@ -64,6 +64,9 @@ app.use(morgan('dev', {
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
+// Import models
+keystone.import('./models');
+
 // Set keystone nav
 keystone.set('nav', {
   'users': ['User']
