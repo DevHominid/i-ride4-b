@@ -62,7 +62,11 @@ app.use(morgan('dev', {
   }, stream: process.stdout
 }));
 
-app.get('/', (req, res) => res.send('Hello World!'));
+// Serve static assets
+app.use(express.static(`${__dirname}/../public`));
+
+// Mount routing middleware
+router.use('/api', apiRouter);
 
 // Import models
 keystone.import('./models');
@@ -72,10 +76,14 @@ keystone.set('nav', {
   'users': ['User']
 });
 
+keystone.set('app', app);
+
 // Handle errors
 app.use((err, req, res, next) => {
-  logger.error(`ERR: ${err}`);
+  logger.error(`Error: \nMessage: ${err.message}`);
   res.status(500).send('Something broke!');
 });
 
-app.listen(port, () => logger.info(`Server listening on port ${port}...`));
+// app.listen(port, () => logger.info(`Server listening on port ${port}...`));
+
+export default keystone;
