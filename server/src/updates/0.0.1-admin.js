@@ -14,6 +14,7 @@ import keystone from 'keystone';
  exports = module.exports = function(done) {
 
     new User.model({
+        // TODO : change credentials 
         name: { first: 'Admin', last: 'User' },
         email: 'dylan@devhominid.com',
         password: '123456',
