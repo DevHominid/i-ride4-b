@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px - 2.50rem);
+  margin-top: calc(80px + 2.50rem);
+  padding: 2.50rem 0;
+  background: #DFDACD;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+}

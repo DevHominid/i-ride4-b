@@ -24,6 +24,8 @@ class ButtonNav extends Component {
     this.setState({
       buttonActive: buttonState
     });
+
+    this.props.toggleMenu();
   }
 
   render() {

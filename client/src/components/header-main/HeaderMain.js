@@ -6,9 +6,9 @@ import ButtonNav from '../button-nav/ButtonNav';
 
 import './HeaderMain.css';
 
-const HeaderMain = () => (
+const HeaderMain = ({ toggleMenu }) => (
   <header>
-    <ButtonNav />
+    <ButtonNav toggleMenu={ toggleMenu } />
     <Logo imgSrc={ logoSrc } />
   </header>
 );
