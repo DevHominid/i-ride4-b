@@ -1,8 +1,13 @@
 import React from 'react';
+import logoSrc from '../../images/logo-temp.png';
+
+import Logo from '../logo/Logo';
+
+import './HeaderMain.css';
 
 const HeaderMain = () => (
   <header>
-    <p>header</p>
+    <Logo imgSrc={ logoSrc } />
   </header>
 );
 
