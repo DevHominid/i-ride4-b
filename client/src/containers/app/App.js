@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
 
 import HeaderMain from '../../components/header-main/HeaderMain';
+import Main from '../main/Main';
+
+import './App.css';
 
 const App = () => (
   <div>
     <HeaderMain />
-    <p>hello.</p>
+    <Main />
   </div>
 );
 

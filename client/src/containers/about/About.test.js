@@ -2,11 +2,11 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import Main from './Main';
+import About from './About';
 
-describe('<Main />', () => {
+describe('<About />', () => {
   it('renders without imploding', () => {
-    const wrapper = shallow(<Main />);
+    const wrapper = shallow(<About />);
     expect(wrapper.length).to.equal(1);
   });
 });
