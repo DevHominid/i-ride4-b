@@ -2,11 +2,13 @@ import React from 'react';
 import logoSrc from '../../images/logo-temp.png';
 
 import Logo from '../logo/Logo';
+import ButtonNav from '../button-nav/ButtonNav';
 
 import './HeaderMain.css';
 
 const HeaderMain = () => (
   <header>
+    <ButtonNav />
     <Logo imgSrc={ logoSrc } />
   </header>
 );
