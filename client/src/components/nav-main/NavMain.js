@@ -10,8 +10,8 @@ class NavMain extends Component {
     if (this.props.menuActive) {
       menu = <nav>
                <ul>
-                 <li><NavLink linkPath={'/'} linkText={'Home'} /></li>
-                 <li><NavLink linkPath={'/about'} linkText={'About'} /></li>
+                 <li><NavLink linkPath={'/'} linkText={'Home'} toggleMenu={this.props.toggleMenu} /></li>
+                 <li><NavLink linkPath={'/about'} linkText={'About'} toggleMenu={this.props.toggleMenu} /></li>
                </ul>
              </nav>;
     } else {

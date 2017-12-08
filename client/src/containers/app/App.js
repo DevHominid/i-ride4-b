@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuActive: false
+      menuActive: false,
+      navClass: 'btn-nav'
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
@@ -18,16 +19,23 @@ class App extends Component {
 
   toggleMenu() {
     const menuState = !this.state.menuActive;
+    let navClassState = this.state.navClass;
+    if (navClassState === 'btn-nav') {
+      navClassState = 'btn-nav active';
+    } else {
+      navClassState = 'btn-nav';
+    }
     this.setState({
-      menuActive: menuState
+      menuActive: menuState,
+      navClass: navClassState
     });
   }
 
   render() {
     return (
       <div>
-        <HeaderMain toggleMenu={ this.toggleMenu } />
-        <NavMain menuActive={this.state.menuActive} />
+        <HeaderMain toggleMenu={ this.toggleMenu } menuActive={this.state.menuActive} navClass={this.state.navClass} />
+        <NavMain toggleMenu={ this.toggleMenu } menuActive={this.state.menuActive} />
         <Main />
       </div>
     );

@@ -10,27 +10,16 @@ class ButtonNav extends Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.navClass = 'btn-nav';
   }
 
-  handleClick(target) {
-    console.log(target);
-    if (this.state.buttonActive) {
-      target.className = 'btn-nav';
-    } else {
-      target.className = 'btn-nav active';
-    }
-
-    const buttonState = !this.state.buttonActive;
-    this.setState({
-      buttonActive: buttonState
-    });
-
+  handleClick() {
     this.props.toggleMenu();
   }
 
   render() {
     return (
-      <button id='btn-nav' className='btn-nav' onClick={(e) => this.handleClick(e.currentTarget)}>
+      <button id='btn-nav' className={this.props.navClass} onClick={this.handleClick}>
         <span></span>
         <span></span>
         <span></span>
