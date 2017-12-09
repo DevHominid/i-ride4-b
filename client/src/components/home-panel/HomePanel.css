@@ -1,18 +1,18 @@
 section.panel {
   display: flex;
   flex-direction: row;
-  width: 15vw;
+  width: 12vw;
   height: 100%;
   cursor: pointer;
   transition: 0.25s ease-out;
 }
 
 section.panel:hover {
-  width: 70vw;
+  width: 76vw;
 }
 
 .panel-img {
-  width: 15vw;
+  width: 12vw;
   transition: 0.25s ease-out;
 }
 
@@ -47,5 +47,5 @@ section.panel.panel-c .panel-img {
 }
 
 section.panel:hover .panel-content {
-  width: 55vw;
+  width: 64vw;
 }
