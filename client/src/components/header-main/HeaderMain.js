@@ -7,7 +7,7 @@ import ButtonNav from '../button-nav/ButtonNav';
 import './HeaderMain.css';
 
 const HeaderMain = ({ toggleMenu, menuActive, navClass }) => (
-  <header>
+  <header className='header-main'>
     <ButtonNav toggleMenu={ toggleMenu } menuActive={ menuActive } navClass={ navClass } />
     <Logo imgSrc={ logoSrc } />
   </header>

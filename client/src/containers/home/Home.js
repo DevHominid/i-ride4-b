@@ -5,7 +5,8 @@ import './Home.css';
 
 const Home = () => (
   <section className='section-home'>
-
+    <div className='panel-module'>
+    </div>
   </section>
 );
 
