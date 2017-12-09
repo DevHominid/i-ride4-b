@@ -11,8 +11,36 @@ section.section-home {
 .section-home .panel-module {
   display: flex;
   flex-direction: row;
+  position: relative;
+  z-index: 2;
   width: 100%;
   height: calc(100vh - 80px - 2.50rem);
   margin-top: calc(80px + 2.50rem);
   /*background: rgba(255, 255, 255, 0.5);*/
+}
+
+.section-home .heading-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  width: 64vw;
+  height: calc(100vh - 80px - 2.50rem);
+  margin-top: calc(80px + 2.50rem);
+}
+
+.section-home .heading-block h1 {
+  width: 70%;
+  margin: 0;
+  font-size: 4.5em;
+  color: #FFF;
+  letter-spacing: 6px;
+}
+
+.section-home .heading-block h1:nth-child(2) {
+  text-align: center;
+  word-spacing: 60px;
+  padding-left: 40px;
 }
