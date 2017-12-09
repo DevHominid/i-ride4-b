@@ -1,6 +1,7 @@
-section {
+section.section-home {
   width: 100%;
-  height: calc(100vh - 80px - 2.50rem);
+  /*height: calc(100vh - 80px - 2.50rem);*/
+  height: 100vh;
   background: url('../../images/index-cover.jpg');
   background-size: cover;
   background-position: center;

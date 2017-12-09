@@ -4,7 +4,7 @@ import coverImg from '../../images/index-cover.jpg';
 import './Home.css';
 
 const Home = () => (
-  <section>
+  <section className='section-home'>
 
   </section>
 );

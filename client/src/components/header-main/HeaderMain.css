@@ -2,6 +2,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 1.25rem 0; /* 20 ÷ 16 */
-  background: #2A2D34;
+  background: rgba(42, 45, 52, 0.85);
 }
