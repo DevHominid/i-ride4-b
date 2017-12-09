@@ -5,4 +5,14 @@ section.section-home {
   background: url('../../images/index-cover.jpg');
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+}
+
+.section-home .panel-module {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100vh - 80px - 2.50rem);
+  margin-top: calc(80px + 2.50rem);
+  /*background: rgba(255, 255, 255, 0.5);*/
 }

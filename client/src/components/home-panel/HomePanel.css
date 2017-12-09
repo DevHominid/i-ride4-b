@@ -1,0 +1,51 @@
+section.panel {
+  display: flex;
+  flex-direction: row;
+  width: 15vw;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.25s ease-out;
+}
+
+section.panel:hover {
+  width: 70vw;
+}
+
+.panel-img {
+  width: 15vw;
+  transition: 0.25s ease-out;
+}
+
+section.panel:hover .panel-img {
+  opacity: 1.0!important;
+}
+
+section.panel.panel-a .panel-img {
+  opacity: 0.80;
+  background: url('../../images/panels/cycling-4.jpg');
+  background-size: cover;
+  background-position: 48% 50%;
+}
+
+section.panel.panel-b .panel-img {
+  opacity: 0.70;
+  background: url('../../images/panels/cycling-2.jpg');
+  background-size: cover;
+  background-position: 40% 50%;
+}
+
+section.panel.panel-c .panel-img {
+  opacity: 0.55;
+  background: url('../../images/panels/cycling-3.jpg');
+  background-size: cover;
+  background-position: 30% 50%;
+}
+
+.panel-content {
+  width: 0;
+  background: rgba(45, 45, 45, 0.5);
+}
+
+section.panel:hover .panel-content {
+  width: 55vw;
+}
